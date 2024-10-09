@@ -133,6 +133,8 @@ steps:
 images:
 - 'us-east4-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
 ```
+In addition to its previous actions, this build configuration file runs the `quickstart-image` it has created. In this task, the `quickstart.sh` script has been modified so that it simulates a test failure when an argument `['fail']` is passed to it.
+
 
 Being in cloud Shell run this command, to start a Cloud Build using `cloudbuild.yaml` as the build configuration file
 ```shell
