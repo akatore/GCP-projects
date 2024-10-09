@@ -103,3 +103,39 @@ Click the build ID for the build at the top of the list. The details of the buil
 ![alt text](image-6.png)
 
 Step 4. Building and testing containers with a build configuration file and Cloud Build
+
+The true power of custom build configuration files is their ability to perform other actions, in parallel or in sequence, in addition to simply building containers: running tests on your newly built containers, pushing them to various destinations, and even deploying them to Kubernetes Engine.
+
+```shell
+vi quickstart.sh
+```
+```shell
+#!/bin/sh
+if [ -z "$1" ]
+then
+	echo "Hello, world! The time is $(date)."
+	exit 0
+else
+	exit 1
+fi
+```
+
+```
+vi cloudbuild2.yaml
+```
+
+```yaml
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'us-east4-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
+- name: 'us-east4-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
+  args: ['fail']
+images:
+- 'us-east4-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
+```
+
+Being in cloud Shell run this command, to start a Cloud Build using `cloudbuild.yaml` as the build configuration file
+```shell
+gcloud builds submit --config cloudbuild2.yaml
+```
+
