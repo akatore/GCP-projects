@@ -1,6 +1,6 @@
 # GCP-projects
 
-before starting, is best to have known to these commands,
+before starting, it's to be known to these commands.
 
 ```shell
 gcloud config set compute/region "REGION"  ## Set the default compute region:
