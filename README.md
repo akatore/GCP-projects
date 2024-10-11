@@ -5,6 +5,7 @@ For each of the following Projects, you should be in the kubernetes dir:
 cd GCP-projects
 ```
 
+## Orchestrating the Cloud with Kuberenetes
   * [Creating and managing pods](Creating%20and%20managing%20pods.md)
   * [Monitoring and health checks](Monitoring%20and%20Health%20Checks.md)
   * [Managing application configurations and secrets](Managing%20application%20configurations%20and%20secrets.md)
