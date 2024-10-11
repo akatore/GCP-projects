@@ -11,6 +11,10 @@ cd orchestrate-with-kubernetes/kubernetes
   * [Creating and managing services](Creating%20and%20Managing%20Services.md)
   * [Creating and managing deployments](Creating%20and%20Managing%20Deployments.md)
   * [Rolling out updates](Rolling%20out%20Updates.md)
+  * [Containers and Kubernetes](Containers%20and%20Kubernetes.md)
+  * [Deploy Kubernetes Applications](Deploy%20Kubernetes%20Applications.md)
+  * [Docker on GCP](Docker%20on%20GCP.md)
+  
 
 before starting, it's to be known to these commands.
 
@@ -22,4 +26,6 @@ gcloud container clusters create --machine-type=e2-medium --zone=ZONE lab-cluste
 gcloud container clusters get-credentials lab-cluster ## Authenticate with the cluster:
 ```
 **Updating kubeconfig**: The third command updates the `kubeconfig` file with the necessary credentials to interact with the specified Kubernetes cluster using `kubectl`.
-> 1. Containers and Kubernetes
+
+
+
