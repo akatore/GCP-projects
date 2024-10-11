@@ -11,7 +11,7 @@ cd orchestrate-with-kubernetes/kubernetes
   * [Creating and managing services](Creating%20and%20Managing%20Services.md)
   * [Creating and managing deployments](Creating%20and%20Managing%20Deployments.md)
   * [Rolling out updates](Rolling%20out%20Updates.md)
-  * [Containers and Kubernetes](Containers%20and%20Kubernetes.md/README.md)
+  * [Containers and Kubernetes](Containers%20and%20Kubernetes/README.md)
   * [Deploy Kubernetes Applications](Deploy%20Kubernetes%20Applications%20on%20GKE/Deploy%20Kubernetes%20Applications.md)
   * [Docker on GCP](Docker%20on%20GCP/Docker%20on%20GCP.md)
   
