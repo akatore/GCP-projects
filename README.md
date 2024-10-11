@@ -2,7 +2,7 @@
 
 For each of the following Projects, you should be in the kubernetes dir:
 ```
-cd orchestrate-with-kubernetes/kubernetes
+cd GCP-projects
 ```
 
   * [Creating and managing pods](Creating%20and%20managing%20pods.md)
