@@ -276,4 +276,34 @@ status: {}
 lets edit the file in editor
 ![image](https://github.com/user-attachments/assets/1c533713-f80a-4bf2-a8ee-6a2460768bac)
 ![image](https://github.com/user-attachments/assets/fd8ccd16-e257-4ac4-9bee-9376411f9f14)
+we have added the container ports as our applictaion is listening on 8080
+
+![image](https://github.com/user-attachments/assets/cb202ab3-212e-46bb-8f18-5cf87378fd94)
+
+![image](https://github.com/user-attachments/assets/3f03891f-d712-4b62-b15c-74d84faa1421)
+
+Now that out pod is in ready state lets expose it using service.
+
+![image](https://github.com/user-attachments/assets/1a70bb81-196a-4ab3-a4bc-00e36d24a55b)
+```
+k expose deployment flaskappdeployment --type LoadBalancer --dry-run=client -oyaml
+```
+![image](https://github.com/user-attachments/assets/51a1ee46-70d8-4926-9af4-e890538cb6aa)
+
+we dont need to do any changes, just neet to create the service of type loadbalancer now,
+
+![image](https://github.com/user-attachments/assets/e3f0b217-d52f-4747-994d-902db0066a66)
+
+![image](https://github.com/user-attachments/assets/e7c20583-6296-4059-9f62-514f850203c3)
+
+Lets get the external IP and check the connection to our appliation.
+
+![image](https://github.com/user-attachments/assets/cc47c892-afc3-4343-9b0d-21a59e0d886d)
+
+Woala!!
+![image](https://github.com/user-attachments/assets/0c58947e-7ac5-4d5d-83ac-689a06ea92a9)
+
+our about page is also working fine.
+
+![image](https://github.com/user-attachments/assets/3c144761-2490-4b78-8d55-457c9b7343a5)
 
