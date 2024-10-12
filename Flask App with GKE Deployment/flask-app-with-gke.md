@@ -139,6 +139,36 @@ Remember, to successfully use this path, you need to have first:
 1. **Enabled the Artifact Registry API:** Ensure the API is enabled for your project using `gcloud services enable artifactregistry.googleapis.com`.
 2. **Created the repository:** Use `gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker` (replacing `my-repository` with your desired name) to create the repository.
 
+
+When pushing a Docker image to a Google Artifact Registry repository, you need to use the **full repository path** as the tag. This path includes the location, project ID, repository name, and image tag.
+
+Here's a breakdown of the components:
+
+```
+<location>-docker.pkg.dev/<project-id>/<repository-name>:<image-tag>
+```
+
+For example, if your repository is in `asia-south1`, your project ID is `vertical-tuner-438407-p5`, your repository name is `my-repository`, and your image tag is `v1`, the full path would be:
+
+```
+asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository:v1
+```
+
+**To push your image using this path:**
+
+1. **Tag the image locally:**
+   ```bash
+   docker tag flask-app:v1 asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository:v1
+   ```
+
+2. **Push the image:**
+   ```bash
+   docker push asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository:v1
+   ```
+
+This ensures that the image is pushed to the correct location in your Artifact Registry.
+
+
 </p>
 </details>
 
