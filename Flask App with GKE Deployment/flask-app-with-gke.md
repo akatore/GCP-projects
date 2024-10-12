@@ -446,3 +446,5 @@ gcloud services disable artifactregistry.googleapis.com container.googleapis.com
 
 
 
+or simply head to the apis liabray and disable the most requests apis,
+![image](https://github.com/user-attachments/assets/007bcbdf-ea29-47f5-b185-e8aa9897c655)
