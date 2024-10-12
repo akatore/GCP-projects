@@ -29,7 +29,6 @@ if __name__ == '__main__':
 ```
 ### 2. **Build a Docker Image:**
 * Create a Dockerfile that defines the environment and dependencies for your Flask application.
-* Build the Docker image using the `docker build` command.
 Dockerfile
 ```Dockerfile
 # Use an official Python runtime as a parent image
@@ -62,10 +61,11 @@ CMD ["python", "app.py"]
 Flask==2.3.3
 
 ```
+### Build the Docker image using the docker build command.
 
 ![image](https://github.com/user-attachments/assets/2cc1646c-ae2e-4bc2-973f-1b3e8cf588a9)
 
-Lets create a Repository in artifactregistry
+### Lets create a Repository in artifactregistry and push our image
 ```
 gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker
 ```
@@ -200,9 +200,10 @@ Let me know if you run into any more issues!</p>
 
 <br></br>
 
-```
-```
-Now we to deploy our app on GKE we need to enable the api first
+### 4. **Create a Create a GKE cluster and connect to it:**
+
+Lets create GKE cluster, we'll use standard mode, but first we need to enable the api.
+
 ![image](https://github.com/user-attachments/assets/7d7900ac-9dbf-46b8-9a75-4c5143776cb4)
 
 ```
@@ -252,7 +253,7 @@ gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-
 ```
 ![image](https://github.com/user-attachments/assets/07fe672d-c0bf-4779-9ee6-b75ac08ebdfd)
 
-### 4. **Create a Kubernetes Deployment:**
+### 5. **Create a Kubernetes Deployment:**
 
 Lets create our deployment.yaml manifest file.
 ```
