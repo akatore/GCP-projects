@@ -228,3 +228,52 @@ It's in creation, might take few minutes.
 
 ![image](https://github.com/user-attachments/assets/fd61cbb0-73b3-43b7-994e-8dbdd8860cef)
 
+So our cluster is created, lets connect to the cluster.
+
+![image](https://github.com/user-attachments/assets/a8ab916c-1323-4c60-8489-75fa60071787)
+
+![image](https://github.com/user-attachments/assets/69ec50cc-0f1c-4e19-9d43-99cf8dc141ba)
+
+```
+gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project vertical-tuner-438407-p5
+```
+![image](https://github.com/user-attachments/assets/07fe672d-c0bf-4779-9ee6-b75ac08ebdfd)
+
+Lets create our deployment.yaml manifest file.
+```
+kubectl create deployment flaskappdeployment--image=asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1 --dry-run=client -oyaml
+```
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskappdeployment
+  name: flaskappdeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskappdeployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flaskappdeployment
+    spec:
+      containers:
+      - image: asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1
+        name: flask-app
+        resources: {}
+status: {}
+
+```
+![image](https://github.com/user-attachments/assets/ee350623-f218-472b-9f99-800e3e0b0335)
+
+
+lets edit the file in editor
+![image](https://github.com/user-attachments/assets/1c533713-f80a-4bf2-a8ee-6a2460768bac)
+![image](https://github.com/user-attachments/assets/fd8ccd16-e257-4ac4-9bee-9376411f9f14)
+
