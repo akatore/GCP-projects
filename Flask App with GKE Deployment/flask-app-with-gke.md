@@ -121,3 +121,70 @@ Remember, to successfully use this path, you need to have first:
 </p>
 </details>
 
+Lets push our image to artifact registry,
+```
+docker tag flask-app:v1 asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1
+```
+```
+docker push asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1
+```
+
+![image](https://github.com/user-attachments/assets/b9e849e4-3cd0-43e4-a8ea-1981f21e0361)
+
+![image](https://github.com/user-attachments/assets/2dedd4c4-3d0c-4c9f-ab9a-1e423caa483a)
+
+<details>
+<summary>If facing bellow error</summary>
+<p>
+
+```abhijeetkatore101@cloudshell:~/project (vertical-tuner-438407-p5)$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED             SIZE
+flask-app    v1        c3e633216874   About an hour ago   136MB
+
+docker push asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app
+Using default tag: latest
+The push refers to repository [asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app]
+An image does not exist locally with the tag: asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app
+abhijeetkatore101@cloudshell:~/project (vertical-tuner-438407-p5)$ 
+```
+        
+The error you encountered happens because the image you're trying to push (`asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app`) does not exist locally. You built the image with the tag `flask-app:v1`, but you need to tag it properly for Google Artifact Registry before pushing.
+
+Here’s how to fix this:
+
+### Steps to Tag and Push the Image to Google Artifact Registry
+
+1. **Tag the Image**:
+   You need to tag your existing `flask-app:v1` image with the full path to your Artifact Registry repository.
+
+   ```bash
+   docker tag flask-app:v1 asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1
+   ```
+
+   This command tags your local `flask-app:v1` image to the registry path `asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1`.
+
+2. **Push the Image**:
+   Now, push the tagged image to your Artifact Registry repository.
+
+   ```bash
+   docker push asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1
+   ```
+
+   Since you have now tagged the image correctly, it should push without errors.
+
+### Verify the Push
+You can verify that the image is successfully pushed to the registry by listing the images:
+
+```bash
+gcloud artifacts docker images list asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository
+```
+
+This should display your `flask-app:v1` image in the repository.
+
+Let me know if you run into any more issues!</p>
+        
+</details>
+
+
+
+
