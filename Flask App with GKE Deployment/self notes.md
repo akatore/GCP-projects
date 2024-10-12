@@ -1,5 +1,5 @@
 To switch to a specific user in Google Cloud Shell (GCS), you can use the `gcloud config set account` command.
-
+----------
 Here's how you can use it:
 
 1. **List available accounts:**
@@ -31,7 +31,7 @@ After running this command, you will be using the `user2@example.com` account fo
 -----
 
 **Authentication is a crucial aspect of using Google Cloud APIs.** The `gcloud` command-line tool provides various commands related to authentication and authorization.
-
+-------------
 **Here are some common commands:**
 
 **1. Authentication:**
@@ -62,11 +62,12 @@ gcloud iam roles add-member --project=your-project-id --role=roles/owner --membe
 - Refer to the official `gcloud` documentation for a comprehensive list of commands and their usage: [https://cloud.google.com/](https://cloud.google.com/)
 
 By using these commands, you can effectively manage authentication and authorization for your Google Cloud applications.
+
 ---------
 
 
 It's important to understand that the command `gcloud iam roles add-member --project=your-project-id --role=roles/owner --member=user:your-email@example.com` shouldn't be used for every API call in Google Cloud Platform (GCP). Here's why:
-
+---------
 **1. Granularity and Security:**
 
 - The `roles/owner` role grants complete access to all resources within your project. This is a very broad permission and should be used sparingly due to security concerns.
