@@ -185,6 +185,39 @@ Let me know if you run into any more issues!</p>
         
 </details>
 
+<br></br>
 
+```
+```
+Now we to deploy our app on GKE we need to enable the api first
+![image](https://github.com/user-attachments/assets/7d7900ac-9dbf-46b8-9a75-4c5143776cb4)
+
+```
+gcloud services enable container.googleapis.com
+```
+![image](https://github.com/user-attachments/assets/7782d01e-00af-437a-8b23-e532aff036e6)
+it's enabled now,
+![image](https://github.com/user-attachments/assets/19cea4f5-ef94-4e18-8504-ce04c5e89b9e)
+
+![image](https://github.com/user-attachments/assets/b8db523f-c9ef-4d02-bce5-7d472535a900)
+
+Lets create out cluster, 
+<!-- ![image](https://github.com/user-attachments/assets/f8deb320-a0f8-4245-9514-56503a4c4658) /!-->
+
+![image](https://github.com/user-attachments/assets/7a4c0b68-4ea8-4ac2-bd7a-54455ffe6258)
+
+```
+gcloud beta container --project "vertical-tuner-438407-p5" clusters create "my-first-cluster-1" --zone "us-central1-c" --no-enable-basic-auth --cluster-version "1.31.1-gke.1146000" --release-channel "rapid" --machine-type "g1-small" --image-type "COS_CONTAINERD" --disk-type "pd-balanced" --disk-size "32" --metadata disable-legacy-endpoints=true --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-ip-alias --network "projects/vertical-tuner-438407-p5/global/networks/default" --subnetwork "projects/vertical-tuner-438407-p5/regions/us-central1/subnetworks/default" --no-enable-intra-node-visibility --default-max-pods-per-node "110" --security-posture=standard --workload-vulnerability-scanning=disabled --no-enable-master-authorized-networks --addons HorizontalPodAutoscaling,HttpLoadBalancing,GcePersistentDiskCsiDriver --enable-autoupgrade --enable-autorepair --max-surge-upgrade 1 --max-unavailable-upgrade 0 --binauthz-evaluation-mode=DISABLED --enable-managed-prometheus --enable-shielded-nodes --node-locations "us-central1-c"
+```
+
+<details>
+<summary>Note</summary>
+    <p>
+        Artifact Registry API: When you enable the Artifact Registry API in your project, it becomes accessible from any region where Google Cloud services are available.
+Repository Access: The repository itself is a logical entity, not tied to a specific physical location. You can access it from any region where you have network connectivity to the Google Cloud platform.
+Image Pull: When your GKE cluster needs to pull a Docker image from your Artifact Registry repository, it will establish a network connection and retrieve the image. The location of the repository doesn't affect the speed or reliability of this process.
+
+</p>
+</details>
 
 
