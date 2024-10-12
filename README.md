@@ -16,7 +16,7 @@ cd GCP-projects
   * [Deploy Kubernetes Applications](Deploy%20Kubernetes%20Applications%20on%20GKE/Deploy%20Kubernetes%20Applications.md)
   * [Docker on GCP](Docker%20on%20GCP/Docker%20on%20GCP.md)
   
-
+[## Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md)
 before starting, it's to be known to these commands.
 
 ```shell
