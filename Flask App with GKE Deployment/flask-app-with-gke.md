@@ -1,5 +1,14 @@
 # Flask App with GKE Deployment
 
+## Flask App with GKE Deployment: A Comprehensive Guide
+
+**Flask** is a lightweight Python web framework that's popular for its simplicity and flexibility. **Google Kubernetes Engine (GKE)** is a managed Kubernetes service on Google Cloud Platform (GCP) that provides a scalable and reliable platform for deploying containerized applications.
+
+**Combining Flask and GKE** offers a powerful solution for building and deploying scalable, cloud-native web applications. Here's a breakdown of the key components and steps involved:
+
+### 1. **Create a Flask Application:**
+* Develop your Flask application using Python.
+* Ensure your application is packaged and ready to be deployed as a Docker image.
 Flask App
 ```py
 from flask import Flask
@@ -18,7 +27,9 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
 
 ```
-
+### 2. **Build a Docker Image:**
+* Create a Dockerfile that defines the environment and dependencies for your Flask application.
+* Build the Docker image using the `docker build` command.
 Dockerfile
 ```Dockerfile
 # Use an official Python runtime as a parent image
@@ -44,6 +55,8 @@ CMD ["python", "app.py"]
 
 ```
 
+
+
 `requirements.txt`
 ```
 Flask==2.3.3
@@ -52,7 +65,7 @@ Flask==2.3.3
 
 ![image](https://github.com/user-attachments/assets/2cc1646c-ae2e-4bc2-973f-1b3e8cf588a9)
 
-Lets create a Repository 
+Lets create a Repository in artifactregistry
 ```
 gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker
 ```
@@ -239,6 +252,8 @@ gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-
 ```
 ![image](https://github.com/user-attachments/assets/07fe672d-c0bf-4779-9ee6-b75ac08ebdfd)
 
+### 4. **Create a Kubernetes Deployment:**
+
 Lets create our deployment.yaml manifest file.
 ```
 kubectl create deployment flaskappdeployment--image=asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1 --dry-run=client -oyaml
@@ -282,11 +297,32 @@ we have added the container ports as our applictaion is listening on 8080
 
 ![image](https://github.com/user-attachments/assets/3f03891f-d712-4b62-b15c-74d84faa1421)
 
+### 4. **Exposing the Deployment with a LoadBalancer:**
 Now that out pod is in ready state lets expose it using service.
 
 ![image](https://github.com/user-attachments/assets/1a70bb81-196a-4ab3-a4bc-00e36d24a55b)
+
 ```
 k expose deployment flaskappdeployment --type LoadBalancer --dry-run=client -oyaml
+```
+```
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskappdeployment
+  name: flaskappdeployment
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: flaskappdeployment
+  type: LoadBalancer
+status:
+  loadBalancer: {}
 ```
 ![image](https://github.com/user-attachments/assets/51a1ee46-70d8-4926-9af4-e890538cb6aa)
 
@@ -297,6 +333,7 @@ we dont need to do any changes, just neet to create the service of type loadbala
 ![image](https://github.com/user-attachments/assets/e7c20583-6296-4059-9f62-514f850203c3)
 
 Lets get the external IP and check the connection to our appliation.
+Once you have the external IP, we can access your app in the browser.
 
 ![image](https://github.com/user-attachments/assets/cc47c892-afc3-4343-9b0d-21a59e0d886d)
 
