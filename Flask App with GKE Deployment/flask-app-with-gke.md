@@ -96,6 +96,11 @@ gcloud artifacts repositories create my-repository --location=asia-south1 --repo
 ![image](https://github.com/user-attachments/assets/378efd41-ab9d-4cd7-825c-828e1366efe0)
 ![image](https://github.com/user-attachments/assets/a027ed54-358a-47f0-b86b-4f45f726c9b1)
 
+
+<details>
+  <summary>**INFO**</summary>
+  <p>Content to be expanded.
+
 The string `asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository` represents the full path to your Docker repository within Google Artifact Registry. Here's how it breaks down:
 
 * **asia-south1-docker.pkg.dev:** This is the hostname for the Artifact Registry location (`asia-south1`) and format (`docker`).
@@ -113,5 +118,6 @@ Remember, to successfully use this path, you need to have first:
 1. **Enabled the Artifact Registry API:** Ensure the API is enabled for your project using `gcloud services enable artifactregistry.googleapis.com`.
 2. **Created the repository:** Use `gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker` (replacing `my-repository` with your desired name) to create the repository.
 
-
+</p>
+</details>
 
