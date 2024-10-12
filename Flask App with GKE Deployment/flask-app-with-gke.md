@@ -350,6 +350,11 @@ we dont need to do any changes, just neet to create the service of type loadbala
 
 ![image](https://github.com/user-attachments/assets/e7c20583-6296-4059-9f62-514f850203c3)
 
+Lets see the console also
+
+![image](https://github.com/user-attachments/assets/9e00524c-db89-4be1-a0d3-f2325f29aee6)
+
+
 Lets get the external IP and check the connection to our appliation.
 Once you have the external IP, we can access your app in the browser.
 
