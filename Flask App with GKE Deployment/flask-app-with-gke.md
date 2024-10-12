@@ -97,7 +97,7 @@ gcloud service enable artifactregistry.googleapis.com
 
 ![image](https://github.com/user-attachments/assets/9d1c75d6-9961-42e9-a4cf-d65420c2c49c)
 
-> NOTE its a paid api, and will cost us, ensure to disable after use, by `gcloud services disable artifactregistry.googleapis.com` before that `gcloud artifactregistry repositories delete my-repository --location asia-south1`
+> NOTE its a paid api, and will cost us, ensure to disable after use, by `gcloud services disable artifactregistry.googleapis.com` before that `gcloud artifactregistry repositories delete my-repository --location asia-south1` or `gcloud artifacts repositories create my-repository --location=asia-south1 --repository-format=docker`
 
 ![image](https://github.com/user-attachments/assets/356a9cb2-be97-4f6f-bed8-81730ab9dcd0)
 
@@ -368,3 +368,29 @@ our about page is also working fine.
 ![image](https://github.com/user-attachments/assets/3c144761-2490-4b78-8d55-457c9b7343a5)
 
 ![image](https://github.com/user-attachments/assets/f7f502f5-c718-4b2e-ac32-6d7d3e543a02)
+By following these steps and leveraging the power of Flask and GKE, you can efficiently deploy and manage scalable, cloud-native web applications.
+
+
+resources deletion and disabling the apis.
+```
+k delete svc flaskappdeployment
+k delete deployment flaskappdeployment --force --grace-period=0
+```
+![image](https://github.com/user-attachments/assets/b7bd683b-060d-42b4-add6-ab80d74d6c26)
+![image](https://github.com/user-attachments/assets/2adde5ad-0607-4e3a-b6cc-743db4ab8645)
+```
+gcloud artifactregistry repositories delete my-repository --location=asia-south1 --quiet ## if this don't work run below one
+gcloud artifacts repositories delete my-repository --location=asia-south1 --quiet
+```
+![image](https://github.com/user-attachments/assets/88d974b5-8426-42c7-9259-981d82b77622)
+
+![image](https://github.com/user-attachments/assets/81797921-d3c5-4502-9294-e530be767060)
+
+#### Breakdown of the Command:
+- `gcloud artifactregistry repositories delete`: This is the command to delete a repository.
+- `my-repository`: This should be replaced with the actual name of your repository.
+- `--location=asia-south1`: This specifies the location of your repository.
+- `--quiet`: This flag is used to bypass the confirmation prompt. If you want to confirm the deletion interactively, you can omit this flag.
+
+```
+
