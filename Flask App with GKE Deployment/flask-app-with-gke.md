@@ -139,6 +139,7 @@ Remember, to successfully use this path, you need to have first:
 1. **Enabled the Artifact Registry API:** Ensure the API is enabled for your project using `gcloud services enable artifactregistry.googleapis.com`.
 2. **Created the repository:** Use `gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker` (replacing `my-repository` with your desired name) to create the repository.
 
+## Pushing images correct way
 
 When pushing a Docker image to a Google Artifact Registry repository, you need to use the **full repository path** as the tag. This path includes the location, project ID, repository name, and image tag.
 
