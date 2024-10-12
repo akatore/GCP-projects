@@ -70,6 +70,7 @@ Flask==2.3.3
 gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker
 ```
 Opps! seems we haven't enabled the `artifactregistry.googleapis.com`
+
 ![image](https://github.com/user-attachments/assets/69c4f493-eae5-4c0a-af82-c172e2b85643)
 
 Lets try again after enabling.
@@ -78,8 +79,11 @@ gcloud services enable artifactregistry.googleapis.com
 ```
 
 lets get the project ID, and set `PROJECT_ID=<project-id>`
+
 ![image](https://github.com/user-attachments/assets/64273b1b-ec63-4a43-a60a-90000221ce9c)
+
 And set the project ID
+
 ![image](https://github.com/user-attachments/assets/be244dc9-920e-444f-b97c-0940dc0aca3e)
 
 ```
@@ -90,6 +94,7 @@ now before we push the image to container registry we need to enable the api
 ```
 gcloud service enable artifactregistry.googleapis.com
 ```
+
 ![image](https://github.com/user-attachments/assets/9d1c75d6-9961-42e9-a4cf-d65420c2c49c)
 
 > NOTE its a paid api, and will cost us, ensure to disable after use, by `gcloud services disable artifactregistry.googleapis.com` before that `gcloud artifactregistry repositories delete my-repository --location asia-south1`
@@ -97,16 +102,19 @@ gcloud service enable artifactregistry.googleapis.com
 ![image](https://github.com/user-attachments/assets/356a9cb2-be97-4f6f-bed8-81730ab9dcd0)
 
 We can now have our repo created here,
+
 ![image](https://github.com/user-attachments/assets/b56759d6-db13-4497-9941-620458d33d7b)
 
 Lets do this again,
 (either of these commands works)
+
 ```
 gcloud artifactregistry repositories create my-repository --location asia-south1 --repository-format=docker
 
 gcloud artifacts repositories create my-repository --location=asia-south1 --repository-format=docker
 ```
 ![image](https://github.com/user-attachments/assets/378efd41-ab9d-4cd7-825c-828e1366efe0)
+
 ![image](https://github.com/user-attachments/assets/a027ed54-358a-47f0-b86b-4f45f726c9b1)
 
 
@@ -210,7 +218,9 @@ Lets create GKE cluster, we'll use standard mode, but first we need to enable th
 gcloud services enable container.googleapis.com
 ```
 ![image](https://github.com/user-attachments/assets/7782d01e-00af-437a-8b23-e532aff036e6)
+
 it's enabled now,
+
 ![image](https://github.com/user-attachments/assets/19cea4f5-ef94-4e18-8504-ce04c5e89b9e)
 
 ![image](https://github.com/user-attachments/assets/b8db523f-c9ef-4d02-bce5-7d472535a900)
