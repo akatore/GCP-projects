@@ -98,8 +98,8 @@ gcloud artifacts repositories create my-repository --location=asia-south1 --repo
 
 
 <details>
-  <summary>**INFO**</summary>
-  <p>Content to be expanded.
+<summary><H3>INFO</H3></summary>
+<p>
 
 The string `asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository` represents the full path to your Docker repository within Google Artifact Registry. Here's how it breaks down:
 
