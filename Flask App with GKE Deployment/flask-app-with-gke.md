@@ -210,6 +210,9 @@ Lets create out cluster,
 gcloud beta container --project "vertical-tuner-438407-p5" clusters create "my-first-cluster-1" --zone "us-central1-c" --no-enable-basic-auth --cluster-version "1.31.1-gke.1146000" --release-channel "rapid" --machine-type "g1-small" --image-type "COS_CONTAINERD" --disk-type "pd-balanced" --disk-size "32" --metadata disable-legacy-endpoints=true --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-ip-alias --network "projects/vertical-tuner-438407-p5/global/networks/default" --subnetwork "projects/vertical-tuner-438407-p5/regions/us-central1/subnetworks/default" --no-enable-intra-node-visibility --default-max-pods-per-node "110" --security-posture=standard --workload-vulnerability-scanning=disabled --no-enable-master-authorized-networks --addons HorizontalPodAutoscaling,HttpLoadBalancing,GcePersistentDiskCsiDriver --enable-autoupgrade --enable-autorepair --max-surge-upgrade 1 --max-unavailable-upgrade 0 --binauthz-evaluation-mode=DISABLED --enable-managed-prometheus --enable-shielded-nodes --node-locations "us-central1-c"
 ```
 
+![image](https://github.com/user-attachments/assets/1e18b8d8-1be1-4803-81dd-f524c357bb55)
+
+
 <details>
 <summary>Note</summary>
     <p>
@@ -220,4 +223,8 @@ Image Pull: When your GKE cluster needs to pull a Docker image from your Artifac
 </p>
 </details>
 
+
+It's in creation, might take few minutes.
+
+![image](https://github.com/user-attachments/assets/fd61cbb0-73b3-43b7-994e-8dbdd8860cef)
 
