@@ -16,16 +16,27 @@ cd GCP-projects
   * [Deploy Kubernetes Applications](Deploy%20Kubernetes%20Applications%20on%20GKE/Deploy%20Kubernetes%20Applications.md)
   * [Docker on GCP](Docker%20on%20GCP/Docker%20on%20GCP.md)
   
-## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md)
+## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
+  * [Project overview](Flask%20App%20with%20GKE%20Deployment/project-summary.md)
 
-<!-- before starting, it's to be known to these commands.
+
+before starting, it's good to be known to these commands.
 
 ```shell
 gcloud config set compute/region "REGION"  ## Set the default compute region:
 gcloud config set compute/zone "ZONE"      ## Set the default compute zone:
 
 gcloud container clusters create --machine-type=e2-medium --zone=ZONE lab-cluster   ## Cluster creation command
-gcloud container clusters get-credentials lab-cluster ## Authenticate with the cluster:
+gcloud container clusters get-credentials CLUSTER_NAME --zone ZONE --project PROJECT_ID ## Authenticates with the cluster:
+gcloud services list --enabled  # To list all the enabled googleapis
+gcloud services enable artifactregistry.googleapis.com # to enable googleapi for particular resource api
+
+gcloud config list accounts
+gcloud config set account YOUR_ACCOUNT_EMAIL
+
+gcloud auth login  ## Authentication, It will prompt you to log in to your Google account and store the credentials locally.
+
+gcloud iam roles add-member --project=your-project-id --role=ROLES/SPECIFIC_ROLE --member=user:your-email@example.com
+gcloud iam roles add-member --project=your-project-id --role=roles/owner --member=user:your-email@example.com  ## Authorization
 ```
-**Updating kubeconfig**: The third command updates the `kubeconfig` file with the necessary credentials to interact with the specified Kubernetes cluster using `kubectl`.
-/!-->
+**Updating kubeconfig**: The 4rth command updates the `kubeconfig` file with the necessary credentials to interact with the specified Kubernetes cluster using `kubectl`.
