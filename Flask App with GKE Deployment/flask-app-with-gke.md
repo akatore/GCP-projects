@@ -402,7 +402,17 @@ our about page is also working fine.
 By following these steps and leveraging the power of Flask and GKE, you can efficiently deploy and manage scalable, cloud-native web applications.
 
 
-resources deletion and disabling the apis.
+resources deletion and disabling the apis which were enabled the time creating the K8s
+
+ie, below once and others
+```
+"https://www.googleapis.com/auth/devstorage.read_only",
+"https://www.googleapis.com/auth/logging.write",
+"https://www.googleapis.com/auth/monitoring",
+"https://www.googleapis.com/auth/servicecontrol",
+"https://www.googleapis.com/auth/service.management.readonly",
+"https://www.googleapis.com/auth/trace.append" 
+```
 ```
 k delete svc flaskappdeployment
 k delete deployment flaskappdeployment --force --grace-period=0
@@ -424,4 +434,15 @@ gcloud artifacts repositories delete my-repository --location=asia-south1 --quie
 - `--quiet`: This flag is used to bypass the confirmation prompt. If you want to confirm the deletion interactively, you can omit this flag.
 
 ```
+gcloud services list --enabled
+```
+```
+gcloud services disable artifactregistry.googleapis.com container.googleapis.com container.googleapis.com
+```
+![image](https://github.com/user-attachments/assets/260d1fb3-e892-487b-b54f-4c9f430a217c)
+
+
+![image](https://github.com/user-attachments/assets/5a8391e2-4e9b-4165-96cb-1031a8486599)
+
+
 
