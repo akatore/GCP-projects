@@ -256,6 +256,13 @@ So our cluster is created, lets connect to the cluster.
 
 ![image](https://github.com/user-attachments/assets/a8ab916c-1323-4c60-8489-75fa60071787)
 
+Lets see if we have creadted compute instances also,
+
+![image](https://github.com/user-attachments/assets/4f372573-c013-44f2-b7ad-160a305db496)
+
+![image](https://github.com/user-attachments/assets/2bd14e95-3cae-4c86-b4f7-ceb2cf63fa98)
+
+
 ![image](https://github.com/user-attachments/assets/69ec50cc-0f1c-4e19-9d43-99cf8dc141ba)
 
 ```
@@ -355,3 +362,4 @@ our about page is also working fine.
 
 ![image](https://github.com/user-attachments/assets/3c144761-2490-4b78-8d55-457c9b7343a5)
 
+![image](https://github.com/user-attachments/assets/f7f502f5-c718-4b2e-ac32-6d7d3e543a02)
