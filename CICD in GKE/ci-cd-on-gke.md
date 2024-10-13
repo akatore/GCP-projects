@@ -12,7 +12,7 @@ gcloud config list project
 
 ### Step 1. Prepare the environment
 #### Set up variables
-In Cloud Shell, set your project ID and project number. Save them as PROJECT_ID and PROJECT_NUMBER variables:
+* In Cloud Shell, set your project ID and project number. Save them as PROJECT_ID and PROJECT_NUMBER variables:
 ```
 export PROJECT_ID=$(gcloud config get-value project)
 export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
@@ -21,7 +21,7 @@ gcloud config set compute/region $REGION
 ```
 
 #### Enable Google services
-Run the following to enable necessary Google services:
+* Run the following to enable necessary Google services:
 ```
 gcloud services enable \
   cloudresourcemanager.googleapis.com \
@@ -34,11 +34,19 @@ gcloud services enable \
 #### Get the source code
 The source code for is located in the <> org on GitHub.
 
-Clone the source code with the command below, then change into the directory.
+* Clone the source code with the command below, then change into the directory.
 ```
 git clone https://github.com/<>/code/
 cd ~/code
 ```
+#### Provision the infrastructure used in this lab
+In this lab you will deploy code to Kubernetes Engine (GKE).
+
+* Run the setup script below to prepare this infrastructure:
+```
+gcloud container clusters create container-dev-cluster --zone=us-east1-c
+```
+
 
 ### Step 2. Working with container images
 #### Create a Docker Repository on Artifact registry
@@ -114,15 +122,15 @@ Before you can store container images in Artifact Registry you need to create on
 ```
 docker build -t us-central1-docker.pkg.dev/[PROJECT_ID]/container-dev-repo/java-hello-world:tag1 .
 ```
-### Push the Container Image to Artifact Registry
+#### Push the Container Image to Artifact Registry
 Run the following command to push the container image to the repository you created:
 ```
 docker push us-central1-docker.pkg.dev/[PROJECT_ID]/container-dev-repo/java-hello-world:tag1
 ```
-Review the image in Artifact Registry
-In Artifact Registry > Repositories, click into container-dev-repo and check that the java-hello-world image is there.
+#### Review the image in Artifact Registry
+1. In Artifact Registry > Repositories, click into `container-dev-repo` and check that the `java-hello-world` image is there.
 
-Click on the image and note the image tagged tag1. You can see that Vulnerability Scanning is running or already completed and the number of vulnerabilities detected is visible.
+2. Click on the image and note the image tagged `tag1`. You can see that Vulnerability Scanning is running or already completed and the number of vulnerabilities detected is visible.
 ![image](https://github.com/user-attachments/assets/b7263098-1ed0-418b-adbf-0146cf13d5b6)
 
 ### Step 3. Integration with Cloud Code
@@ -144,3 +152,9 @@ The Cloud Shell editor will open with the explorer in the application folder.
 ![image](https://github.com/user-attachments/assets/b23e4e40-e638-47cc-b87d-e1fb0cf7cb27)
 
 ![image](https://github.com/user-attachments/assets/4538fa78-9571-4ec4-afff-5eae47fb8d7d)
+
+Also, expand the **KUBERNETES** option. You will be able to see the cluster loading.
+
+Wait until you see the cluster listed under **KUBERNETES** as well as under **COMPUTE ENGINE**.
+
+
