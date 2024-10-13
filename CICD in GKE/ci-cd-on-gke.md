@@ -170,18 +170,20 @@ Click Navigation menu under the Cloud Shell Editornavigation menu icon View > Co
 
 ![image](https://github.com/user-attachments/assets/4e5512fc-4c07-4489-9384-da97fdf9e0ca)
 
-Choose cloud-code-samples/java/java-hello-world/skaffold.yaml and then dockerfile.
+Choose `cloud-code-samples/java/java-hello-world/skaffold.yaml` and then `dockerfile`.
 
 ![image](https://github.com/user-attachments/assets/c15de1c2-3983-49db-9e5b-7319677bb688)
 
 ![image](https://github.com/user-attachments/assets/c37935c4-56ea-41cc-8f58-e9a33919a635)
 ![image](https://github.com/user-attachments/assets/7ee1b3ed-8e00-41ef-a2e4-0a4e2cf836dd)
+
+If Prompted for a context, select Yes to use the current context.
 ![image](https://github.com/user-attachments/assets/2ba6aad3-683f-4e00-b658-ae6ba88b9402)
 
+In the prompt for the image registry select *Enter the address of an image repository* and put the address location you located below and press Enter.
 ![image](https://github.com/user-attachments/assets/43ed0353-f07e-4ef0-8f17-bfac10df4c9a)
 
-us-east1-docker.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-repo
-
+`us-east1-docker.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-repo` (example only) you have to put the repo address of the one you created.
 ![image](https://github.com/user-attachments/assets/92deebdb-f275-4585-bd5b-85c8f1e6ca95)
 
 ![image](https://github.com/user-attachments/assets/2a64e4f0-a4b3-451f-8dba-51af7f0d6283)
