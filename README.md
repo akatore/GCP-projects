@@ -7,7 +7,7 @@ cd GCP-projects
 ## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
   * [Project overview](Flask%20App%20with%20GKE%20Deployment/project-summary.md)
 
-## 
+## CI/CD with Terraform and Kubernetes (in progress)
 
 ## Orchestrating the Cloud with Kuberenetes
   * [Creating and managing pods](Creating%20and%20managing%20pods.md)
