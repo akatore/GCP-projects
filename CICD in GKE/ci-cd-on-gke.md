@@ -192,6 +192,20 @@ In the prompt for the image registry select *Enter the address of an image repos
 
 ![image](https://github.com/user-attachments/assets/87c8e647-a585-46d7-8f22-99fef60a6345)
 
+
+#### Update application code
+Now update the application to see the change implemented immediately in the deployment on the cluster:
+
+1. Open the HelloWorldController.java by clicking on the Navigation menu under the Cloud Shell Editor navigation menu icon View > Command Palette... and then click one backspace and then enter the path src/main/java/cloudcode/helloworld/web and click the option starting with Hello.. .
+
+2. Change the text in row 20 from "It's running!" to "It's updated!". You should see the build and deployment process starting immediately.
+
+3. At the end of the deploy click again on the forwarded url or refresh the browser window with the application to see your change deployed:
+
+![image](https://github.com/user-attachments/assets/823c1077-5058-4013-8c80-ba649dce5d98)
+![image](https://github.com/user-attachments/assets/8cd942a6-488b-4783-ba62-58b1ac7410af)
+
+
 ![image](https://github.com/user-attachments/assets/b59aec2c-ed46-48a9-bfb4-8165de9b9020)
 
 ![image](https://github.com/user-attachments/assets/8a38c8c8-8020-4883-b6bb-4c2d04b1abbf)
@@ -200,3 +214,143 @@ In the Cloud console go to Navigation Menu > Artifact Registry > Repositories an
 
 ![image](https://github.com/user-attachments/assets/0caaac5e-0acd-4a54-82a3-c0817dd0015d)
 
+<details> <summary>self notes</summary>
+<p>
+  
+```
+gcloud auth login --update-adc
+```
+```
+gcloud artifacts print-settings mvn \
+    --repository=container-dev-java-repo \
+    --location=us-east1
+```
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+
+ <artifactId>hello-world</artifactId>
+ <packaging>jar</packaging>
+ <name>Cloud Code Hello World</name>
+ <description>Getting started with Cloud Code</description>
+ <version>1.0.0</version>
+<distributionManagement>
+   <snapshotRepository>
+     <id>artifact-registry</id>
+     <url>artifactregistry://us-east1-maven.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-java-repo</url>
+   </snapshotRepository>
+   <repository>
+     <id>artifact-registry</id>
+     <url>artifactregistry://us-east1-maven.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-java-repo</url>
+   </repository>
+ </distributionManagement>
+
+ <repositories>
+   <repository>
+     <id>artifact-registry</id>
+     <url>artifactregistry://us-east1-maven.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-java-repo</url>
+     <releases>
+       <enabled>true</enabled>
+     </releases>
+     <snapshots>
+       <enabled>true</enabled>
+     </snapshots>
+   </repository>
+ </repositories>
+
+ <parent>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-parent</artifactId>
+   <version>2.6.3</version>
+ </parent>
+
+ <properties>
+   <java.version>1.8</java.version>
+   <checkstyle.config.location>./checkstyle.xml</checkstyle.config.location>
+ </properties>
+
+ <build>
+   <plugins>
+     <plugin>
+       <groupId>com.google.cloud.tools</groupId>
+       <artifactId>jib-maven-plugin</artifactId>
+       <version>3.2.0</version>
+     </plugin>
+     <plugin>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-maven-plugin</artifactId>
+     </plugin>
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-checkstyle-plugin</artifactId>
+       <version>3.1.2</version>
+     </plugin>
+   </plugins>
+   <extensions>
+     <extension>
+       <groupId>com.google.cloud.artifactregistry</groupId>
+       <artifactId>artifactregistry-maven-wagon</artifactId>
+       <version>2.1.0</version>
+     </extension>
+   </extensions>
+ </build>
+
+ <!-- The Spring Cloud GCP BOM will manage spring-cloud-gcp version numbers for you. -->
+ <dependencyManagement>
+   <dependencies>
+     <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-gcp-dependencies</artifactId>
+       <version>1.2.8.RELEASE</version>
+       <type>pom</type>
+       <scope>import</scope>
+     </dependency>
+   </dependencies>
+ </dependencyManagement>
+
+ <dependencies>
+
+   <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter</artifactId>
+   </dependency>
+
+   <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-jetty</artifactId>
+   </dependency>
+
+   <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-webmvc</artifactId>
+   </dependency>
+
+   <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-thymeleaf</artifactId>
+   </dependency>
+
+   <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-test</artifactId>
+     <scope>test</scope>
+   </dependency>
+
+   <dependency>
+     <groupId>org.springframework.cloud</groupId>
+     <artifactId>spring-cloud-gcp-starter-logging</artifactId>
+   </dependency>
+
+ </dependencies>
+
+</project>
+
+```
+![image](https://github.com/user-attachments/assets/ceeaaab5-76ca-4ff8-b062-9ab4b0b774dd)
+
+
+![image](https://github.com/user-attachments/assets/156683c2-baa1-4a45-88fd-11258a430142)
+</p>
+</details>
