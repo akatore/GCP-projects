@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskappdeployment
+  name: flaskappdeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskappdeployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flaskappdeployment
+    spec:
+      containers:
+      - image: asia-south1-docker.pkg.dev/vertical-tuner-438407-p5/my-repository/flask-app:v1
+        name: flask-app
+        resources: {}
+        ports:
+          - containerPort: 8080     ## our application is listening on port 8080
+status: {}
