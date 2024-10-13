@@ -196,3 +196,7 @@ In the prompt for the image registry select *Enter the address of an image repos
 
 ![image](https://github.com/user-attachments/assets/8a38c8c8-8020-4883-b6bb-4c2d04b1abbf)
 
+In the Cloud console go to Navigation Menu > Artifact Registry > Repositories and click into container-dev-repo to check that the java-hello-world image and note the new image.
+
+![image](https://github.com/user-attachments/assets/0caaac5e-0acd-4a54-82a3-c0817dd0015d)
+
