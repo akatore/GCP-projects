@@ -1,9 +1,9 @@
 # GCP-projects
 
-For each of the following Projects, you should be in the kubernetes dir:
+<!--For each of the following Projects, you should be in the kubernetes dir:
 ```
 cd GCP-projects
-```
+```/!-->
 ## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
   * [Project overview](Flask%20App%20with%20GKE%20Deployment/project-summary.md)
 
