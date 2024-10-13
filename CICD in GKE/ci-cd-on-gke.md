@@ -188,3 +188,11 @@ In the prompt for the image registry select *Enter the address of an image repos
 
 ![image](https://github.com/user-attachments/assets/2a64e4f0-a4b3-451f-8dba-51af7f0d6283)
 
+![image](https://github.com/user-attachments/assets/0782d1c8-e6a7-40f1-a7c2-c15712b2375a)
+
+![image](https://github.com/user-attachments/assets/87c8e647-a585-46d7-8f22-99fef60a6345)
+
+![image](https://github.com/user-attachments/assets/b59aec2c-ed46-48a9-bfb4-8165de9b9020)
+
+![image](https://github.com/user-attachments/assets/8a38c8c8-8020-4883-b6bb-4c2d04b1abbf)
+
