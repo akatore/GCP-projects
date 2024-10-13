@@ -7,6 +7,8 @@ cd GCP-projects
 ## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
   * [Project overview](Flask%20App%20with%20GKE%20Deployment/project-summary.md)
 
+## 
+
 ## Orchestrating the Cloud with Kuberenetes
   * [Creating and managing pods](Creating%20and%20managing%20pods.md)
   * [Monitoring and health checks](Monitoring%20and%20Health%20Checks.md)
@@ -17,6 +19,8 @@ cd GCP-projects
   * [Containers and Kubernetes](Containers%20and%20Kubernetes/README.md)
   * [Deploy Kubernetes Applications](Deploy%20Kubernetes%20Applications%20on%20GKE/Deploy%20Kubernetes%20Applications.md)
   * [Docker on GCP](Docker%20on%20GCP/Docker%20on%20GCP.md)
+  * Configuring Google Kubernetes Engine (GKE) Networking (**completed not documented**)
+  * Configuring Persistent Storage for Google Kubernetes Engine (**completed not documented**)
 
 ## [CICD in GKE](CICD%20in%20GKE/ci-cd-on-gke.md) 
   * Working with Artifact Registry #working with container images #Integrtion with Cloud Code
