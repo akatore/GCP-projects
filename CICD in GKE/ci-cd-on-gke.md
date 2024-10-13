@@ -157,4 +157,18 @@ Also, expand the **KUBERNETES** option. You will be able to see the cluster load
 
 Wait until you see the cluster listed under **KUBERNETES** as well as under **COMPUTE ENGINE**.
 
+(ignore the region, the SS is for example only)
+![image](https://github.com/user-attachments/assets/407e7e26-7ebf-4149-8709-4197fedb5be9)
 
+3. The following steps will require you to enter your Artifact Registry repository location. The format for the location is:
+```
+(example)
+us-east1-docker.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-repo  
+```
+Click Navigation menu under the Cloud Shell Editornavigation menu icon View > Command Palette... and type Run on Kubernetes and select Cloud Code: Run on Kubernetes.
+
+![image](https://github.com/user-attachments/assets/4e5512fc-4c07-4489-9384-da97fdf9e0ca)
+
+Choose cloud-code-samples/java/java-hello-world/skaffold.yaml and then dockerfile.
+
+![image](https://github.com/user-attachments/assets/c15de1c2-3983-49db-9e5b-7319677bb688)
