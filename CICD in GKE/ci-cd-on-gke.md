@@ -166,6 +166,7 @@ Wait until you see the cluster listed under **KUBERNETES** as well as under **CO
 us-east1-docker.pkg.dev/qwiklabs-gcp-02-283f59f9ad7d/container-dev-repo  
 ```
 Click Navigation menu under the Cloud Shell Editornavigation menu icon View > Command Palette... and type Run on Kubernetes and select Cloud Code: Run on Kubernetes.
+![image](https://github.com/user-attachments/assets/0b59c110-ca35-472b-a79f-19b05f7667aa)
 
 ![image](https://github.com/user-attachments/assets/4e5512fc-4c07-4489-9384-da97fdf9e0ca)
 
