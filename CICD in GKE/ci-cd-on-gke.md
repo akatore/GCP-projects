@@ -35,10 +35,10 @@ gcloud services enable \
 The source code for is located in the <> org on GitHub.
 
 Clone the source code with the command below, then change into the directory.
-
+```
 git clone https://github.com/<>/code/
 cd ~/code
-
+```
 
 ### Step 2. Working with container images
 #### Create a Docker Repository on Artifact registry
