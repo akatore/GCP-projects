@@ -22,7 +22,7 @@ cd GCP-projects
   * Configuring Google Kubernetes Engine (GKE) Networking (**completed not documented**)
   * Configuring Persistent Storage for Google Kubernetes Engine (**completed not documented**)
 
-## [CICD in GKE](CICD%20in%20GKE/ci-cd-on-gke.md) 
+## [CI/CD using GKE cluster](CICD%20in%20GKE/ci-cd-on-gke.md) 
   * Working with Artifact Registry #working with container images #Integrtion with Cloud Code
   * Google Kubernetes Engine Pipeline using Cloud Build (in progress)
   * Continuous Delivery with Google Cloud Deploy (in progress)
