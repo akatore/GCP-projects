@@ -1,4 +1,4 @@
-# CI/CD on GKE
+# CI/CD using GKE cluster
 
 List the active account name:
 
