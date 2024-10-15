@@ -4,7 +4,7 @@
 ```
 cd GCP-projects
 ```/!-->
-## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
+## [Application Deployment and Container Orchestration on Google Kubernetes Engine](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
   * [Project overview](Flask%20App%20with%20GKE%20Deployment/project-summary.md)
 
 ## [CI/CD with Terraform and Kubernetes](https://github.com/akatore/GCP-projects/tree/main/ci-cd-with-terraform-kubernetes-on-gcp)
