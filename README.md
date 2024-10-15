@@ -7,9 +7,9 @@ cd GCP-projects
 ## [Flask app on GKE](Flask%20App%20with%20GKE%20Deployment/flask-app-with-gke.md) (full project)
   * [Project overview](Flask%20App%20with%20GKE%20Deployment/project-summary.md)
 
-## CI/CD with Terraform and Kubernetes (in progress)
+## [CI/CD with Terraform and Kubernetes](https://github.com/akatore/GCP-projects/tree/main/ci-cd-with-terraform-kubernetes-on-gcp)
 
-## Orchestrating the Cloud with Kuberenetes
+## [Orchestrating the Cloud with Kuberenetes](https://github.com/akatore/GCP-projects/tree/main/Architecting%20and%20Managing%20Kubernetes%20Workloads%20on%20GKE)
   * [Creating and managing pods](Creating%20and%20managing%20pods.md)
   * [Monitoring and health checks](Monitoring%20and%20Health%20Checks.md)
   * [Managing application configurations and secrets](Managing%20application%20configurations%20and%20secrets.md)
