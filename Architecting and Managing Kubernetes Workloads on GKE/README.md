@@ -1,4 +1,4 @@
-## Orchestrating the Cloud with Kuberenetes
+## Architecting and Managing Kubernetes Workloads on GKE
   * [Creating and managing pods](Creating%20and%20managing%20pods.md)
   * [Monitoring and health checks](Monitoring%20and%20Health%20Checks.md)
   * [Managing application configurations and secrets](Managing%20application%20configurations%20and%20secrets.md)
