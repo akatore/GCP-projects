@@ -211,15 +211,12 @@ gcloud iam workload-identity-pools providers create-oidc "k8s-provider" \
 ```
 -->
 
+![alt text](image-2.png)
+
 OIDC Idenity Provider created
 > ![alt text](image-3.png)
 
-<details> 
-<summary><summary>
 
-![alt text](image-2.png)
-
-</details>
 
 #### Create a service account with these permissions
 ```sh
