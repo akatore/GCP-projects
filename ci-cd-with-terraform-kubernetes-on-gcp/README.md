@@ -190,6 +190,18 @@ gcloud iam workload-identity-pools create "k8s-pool" \
 ### Create a oidc identity provider for authenticating with Github
 ```sh
 gcloud iam workload-identity-pools providers create-oidc "k8s-provider" \
+  --project="${PROJECT_ID}" \
+  --location="global" \
+  --workload-identity-pool="k8s-pool" \
+  --display-name="k8s provider" \
+  --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository,attribute.actor=assertion.actor,attribute.aud=assertion.aud" \
+  --issuer-uri="https://token.actions.githubusercontent.com" \
+  --attribute-condition="attribute.repository=='akatore/GCP-projects'"
+```
+<!--
+
+```sh
+gcloud iam workload-identity-pools providers create-oidc "k8s-provider" \
 --project="${PROJECT_ID}" \
 --location="global" \
 --workload-identity-pool="k8s-pool" \
@@ -197,6 +209,15 @@ gcloud iam workload-identity-pools providers create-oidc "k8s-provider" \
 --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.aud=assertion.aud" \
 --issuer-uri="https://token.actions.githubusercontent.com"
 ```
+-->
+
+<details> 
+<summary><summary>
+
+![alt text](image-2.png)
+
+</details>
+
 #### Create a service account with these permissions
 ```sh
 roles/compute.admin
