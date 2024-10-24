@@ -2,7 +2,7 @@ name: Deploy to Kubernetes
 on: # on which event we want to run this workflow
   push:
     branches:
-    - "main"
+    - "test"
 
 env:
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
