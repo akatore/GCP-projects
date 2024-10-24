@@ -394,6 +394,8 @@ version: 1
 Refresh the IAM policy page to see who(user/SA) has what role access to what resources(compute engine, strorage bucket) 
 ![alt text](image-5.png)
 
+we have 3 SA out of which we cannot use ![alt text](image-6.png) as I have deleted the SA but we can use other with necessary access roles
+
 ### Add IAM Policy bindings with Github repo, Identity provider and service account.
 ```sh
 gcloud iam service-accounts add-iam-policy-binding "${SERVICE_ACCOUNT_EMAIL}" \
