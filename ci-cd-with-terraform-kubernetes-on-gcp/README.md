@@ -230,7 +230,59 @@ roles/storage.admin
 
 > [create directly using this script](https://github.com/akatore/GCP-projects/blob/main/ci-cd-with-terraform-kubernetes-on-gcp/notes/scipt-to-assign-roles.sh)
 
-> Permission added output can be seen below
+> Example Permission added output can be seen below:
+![alt text](image-4.png)
+
+```
+gcloud iam service-accounts create my-service-account \
+  --description="Service account for application access" \
+  --display-name="My Service Account" \
+  --project="$PROJECT_ID"                                                                                                                                                                                                 
+Created service account [my-service-account].
+```
+```
+gcloud iam service-accounts list --project="$PROJECT_ID"                                                                                                             
+DISPLAY NAME: My Service Account
+EMAIL: my-service-account@gke-project-439604.iam.gserviceaccount.com
+DISABLED: False
+
+DISPLAY NAME: gke-wsa
+EMAIL: gke-wsa@gke-project-439604.iam.gserviceaccount.com
+DISABLED: False
+
+DISPLAY NAME: gke-sa
+EMAIL: gke-sa@gke-project-439604.iam.gserviceaccount.com
+DISABLED: False
+```
+```
+export SERVICE_ACCOUNT_EMAIL=my-service-account@gke-project-439604.iam.gserviceaccount.com
+```
+```
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/compute.admin"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/container.admin"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/container.clusterAdmin"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/iam.serviceAccountTokenCreator"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/iam.serviceAccountUser"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$SERVICE_ACCOUNT_EMAIL" \
+  --role="roles/storage.admin"
+```
+Output:
 ```
 Updated IAM policy for project [gke-project-439604].
 bindings:
@@ -338,6 +390,9 @@ bindings:
 etag: BwYlMzVyDfM=
 version: 1
 ````
+
+Refresh the IAM policy page to see who(user/SA) has what role access to what resources(compute engine, strorage bucket) 
+![alt text](image-5.png)
 
 ### Add IAM Policy bindings with Github repo, Identity provider and service account.
 ```sh
