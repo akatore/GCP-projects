@@ -397,6 +397,9 @@ Refresh the IAM policy page to see who(user/SA) has what role access to what res
 we have 3 SA out of which we cannot use ![alt text](image-6.png) as I have deleted the SA(principal on which we assign the resource role access) but we can use other with necessary access roles
 
 ### Add IAM Policy bindings with Github repo, Identity provider and service account.
+>Adding IAM Policy Binding to a Service Account for Workload Identity
+>Allowing External Identity to Impersonate the Service Account
+
 ```sh
 gcloud iam service-accounts add-iam-policy-binding "${SERVICE_ACCOUNT_EMAIL}" \
 --project="${GCP_PROJECT_ID}" \
