@@ -1,0 +1,5 @@
+name: Deploy to Kubernetes
+on: # on which event we want to run this workflow
+  push:
+    branches:
+    - 
