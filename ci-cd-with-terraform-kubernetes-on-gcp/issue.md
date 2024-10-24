@@ -113,6 +113,8 @@ The error message indicates that the GitHub Actions runner does not have the nec
    - Locate the identity associated with your GitHub Actions (this might be a Google-managed service account created for your Workload Identity Pool).
    - Click on **Edit** (the pencil icon) next to that identity.
    - Under **Add another role**, select **Service Account Token Creator** (this is the role that includes the `iam.serviceAccounts.getAccessToken` permission).
+   - ![image](https://github.com/user-attachments/assets/30996737-3392-42ae-be9a-b18b092180e6)
+
    - In the **Condition** field, you may leave it blank or specify conditions based on your requirements.
    - Save the changes.
 
