@@ -1,3 +1,5 @@
+![alt text](image.png)
+
 Here’s a breakdown of the three steps you're seeing while creating a service account in Google Cloud:
 
 ### 1. **Service Account Details:**
