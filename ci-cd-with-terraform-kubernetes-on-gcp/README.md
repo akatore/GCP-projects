@@ -404,6 +404,9 @@ gcloud iam service-accounts add-iam-policy-binding "${SERVICE_ACCOUNT_EMAIL}" \
 --member="principalSet://iam.googleapis.com/projects/${GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/k8s-pool/attribute.repository/${GITHUB_REPO}"
 ```
 
+![alt text](image-8.png)
+![alt text](image-7.png)
+![alt text](image-9.png)
 
 ## Step 5. Create a bucket in GCS for storing terraform state file.
 ## Step 6. Get your GCP Project number for reference.
