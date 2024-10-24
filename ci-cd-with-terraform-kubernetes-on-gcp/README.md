@@ -230,6 +230,115 @@ roles/storage.admin
 
 > [create directly using this script](https://github.com/akatore/GCP-projects/blob/main/ci-cd-with-terraform-kubernetes-on-gcp/notes/scipt-to-assign-roles.sh)
 
+> Permission added output can be seen below
+```
+Updated IAM policy for project [gke-project-439604].
+bindings:
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - user:abhijeetkatore101@gmail.com
+  role: roles/owner
+etag: BwYlMzSMQJM=
+version: 1
+Updated IAM policy for project [gke-project-439604].
+bindings:
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.admin
+- members:
+  - user:abhijeetkatore101@gmail.com
+  role: roles/owner
+etag: BwYlMzTHIiY=
+version: 1
+Updated IAM policy for project [gke-project-439604].
+bindings:
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.clusterAdmin
+- members:
+  - user:abhijeetkatore101@gmail.com
+  role: roles/owner
+etag: BwYlMzT5lgE=
+version: 1
+Updated IAM policy for project [gke-project-439604].
+bindings:
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.clusterAdmin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountTokenCreator
+- members:
+  - user:abhijeetkatore101@gmail.com
+  role: roles/owner
+etag: BwYlMzUdjCM=
+version: 1
+Updated IAM policy for project [gke-project-439604].
+bindings:
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.clusterAdmin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountTokenCreator
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - user:abhijeetkatore101@gmail.com
+  role: roles/owner
+etag: BwYlMzVNCM0=
+version: 1
+Updated IAM policy for project [gke-project-439604].
+bindings:
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.admin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/container.clusterAdmin
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountTokenCreator
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - user:abhijeetkatore101@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:gke-sa@gke-project-439604.iam.gserviceaccount.com
+  role: roles/storage.admin
+etag: BwYlMzVyDfM=
+version: 1
+````
+
 ### Add IAM Policy bindings with Github repo, Identity provider and service account.
 ```sh
 gcloud iam service-accounts add-iam-policy-binding "${SERVICE_ACCOUNT_EMAIL}" \
