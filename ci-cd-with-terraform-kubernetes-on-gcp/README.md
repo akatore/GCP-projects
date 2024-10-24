@@ -227,6 +227,9 @@ roles/iam.serviceAccountTokenCreator
 roles/iam.serviceAccountUser
 roles/storage.admin
 ```
+
+> [create directly using this script](https://github.com/akatore/GCP-projects/blob/main/ci-cd-with-terraform-kubernetes-on-gcp/notes/sub-claim-in-github-actions-OIDC.md)
+
 ### Add IAM Policy bindings with Github repo, Identity provider and service account.
 ```sh
 gcloud iam service-accounts add-iam-policy-binding "${SERVICE_ACCOUNT_EMAIL}" \
