@@ -228,7 +228,7 @@ roles/iam.serviceAccountUser
 roles/storage.admin
 ```
 
-> [create directly using this script](ci-cd-with-terraform-kubernetes-on-gcp/notes/scipt-to-assign-roles.sh)
+> [create directly using this script](https://github.com/akatore/GCP-projects/blob/main/ci-cd-with-terraform-kubernetes-on-gcp/notes/scipt-to-assign-roles.sh)
 
 ### Add IAM Policy bindings with Github repo, Identity provider and service account.
 ```sh
