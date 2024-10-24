@@ -179,6 +179,10 @@ gcloud iam workload-identity-pools create "k8s-pool" \
 --location="global" \
 --display-name="k8s Pool"
 ```
+<details> <summary></summary>
+![alt text](image.png)
+</details>
+
 ### Create a oidc identity provider for authenticating with Github
 ```sh
 gcloud iam workload-identity-pools providers create-oidc "k8s-provider" \
