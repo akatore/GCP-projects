@@ -211,6 +211,8 @@ gcloud iam workload-identity-pools providers create-oidc "k8s-provider" \
 ```
 -->
 
+OIDC Idenity Provider created
+> ![alt text](image-3.png)
 <details> 
 <summary><summary>
 
