@@ -21,6 +21,8 @@ export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(pro
 export REGION=us-central1
 gcloud config set compute/region $REGION
 ```
+![image](https://github.com/user-attachments/assets/6a04d1bd-e81d-4b3b-9ab4-950e4eac87bb)
+
 
 #### Enable Google services
 * Run the following to enable necessary Google services:
@@ -32,14 +34,16 @@ gcloud services enable \
   containerregistry.googleapis.com \
   containerscanning.googleapis.com  
 ```
+![image](https://github.com/user-attachments/assets/f537b205-91b5-4c39-9705-8541105aab2b)
+
 
 #### Get the source code
 The source code for is located in the <> org on GitHub.
 
 * Clone the source code with the command below, then change into the directory.
 ```
-git clone https://github.com/<>/code/
-cd ~/code
+git clone https://github.com/GoogleCloudPlatform/cloud-code-samples/
+cd ~/cloud-code-samples
 ```
 #### Provision the infrastructure used in this lab
 In this lab you will deploy code to Kubernetes Engine (GKE).
@@ -48,6 +52,8 @@ In this lab you will deploy code to Kubernetes Engine (GKE).
 ```
 gcloud container clusters create container-dev-cluster --zone=us-east1-c
 ```
+![image](https://github.com/user-attachments/assets/8fd8b877-131a-4846-8b39-7c6fcfbde17f)
+
 
 
 ### Step 2. Working with container images
@@ -63,6 +69,8 @@ gcloud artifacts repositories create container-dev-repo --repository-format=dock
   --description="Docker repository for Container Dev Workshop"
 
 ```
+![image](https://github.com/user-attachments/assets/1068cc08-79af-44f0-98e0-cf96c2415ac0)
+
 2. In the Cloud console, go to Artifact Registry > Repositories and notice your newly created Docker repository named container-dev-repo. If you click on it you can see that it's empty at the moment
 ![image](https://github.com/user-attachments/assets/59b19bfe-4db2-4561-882b-385c32d515b1)
 
@@ -124,11 +132,18 @@ Before you can store container images in Artifact Registry you need to create on
 ```
 docker build -t us-central1-docker.pkg.dev/[PROJECT_ID]/container-dev-repo/java-hello-world:tag1 .
 ```
+
+![image](https://github.com/user-attachments/assets/19851288-fa32-49c3-a5f0-848c815a95c2)
+
+
 #### Push the Container Image to Artifact Registry
 Run the following command to push the container image to the repository you created:
 ```
 docker push us-central1-docker.pkg.dev/[PROJECT_ID]/container-dev-repo/java-hello-world:tag1
 ```
+![image](https://github.com/user-attachments/assets/ba55690a-1302-4705-b23b-669d5ce9a717)
+
+
 #### Review the image in Artifact Registry
 1. In Artifact Registry > Repositories, click into `container-dev-repo` and check that the `java-hello-world` image is there.
 
