@@ -165,6 +165,8 @@ The Cloud Shell editor will open with the explorer in the application folder.
 
 2. From the left menu, select Cloud Code and then expand the COMPUTE ENGINE option and click on Select a Project and choose the project ID.
 ![image](https://github.com/user-attachments/assets/3c80de33-4558-453a-b331-6b87c25c1649)
+(for example)
+![image](https://github.com/user-attachments/assets/6f8aaa11-4ecc-45cf-9bd1-39023f97b1d4)
 
 ![image](https://github.com/user-attachments/assets/b23e4e40-e638-47cc-b87d-e1fb0cf7cb27)
 
