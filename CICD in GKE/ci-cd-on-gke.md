@@ -1,4 +1,5 @@
 # CI/CD using GKE cluster
+![image](https://github.com/user-attachments/assets/0c86c41a-60c4-420a-a26b-0bf79d7bda77)
 
 List the active account name:
 
