@@ -3,11 +3,11 @@
 
 
 ## Objectives
-Create Kubernetes Engine clusters
-Create Cloud Source Repositories
-Trigger Cloud Build from Cloud Source Repositories
-Automate tests and publish a deployable container image via Cloud Build
-Manage resources deployed in a Kubernetes Engine cluster via Cloud Build
+* Create Kubernetes Engine clusters
+* Create Cloud Source Repositories
+* Trigger Cloud Build from Cloud Source Repositories
+* Automate tests and publish a deployable container image via Cloud Build
+* Manage resources deployed in a Kubernetes Engine cluster via Cloud Build
 
 List the active account name:
 
