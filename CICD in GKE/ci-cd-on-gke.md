@@ -1,6 +1,14 @@
 # CI/CD using GKE cluster
 ![image](https://github.com/user-attachments/assets/0c86c41a-60c4-420a-a26b-0bf79d7bda77)
 
+
+## Objectives
+Create Kubernetes Engine clusters
+Create Cloud Source Repositories
+Trigger Cloud Build from Cloud Source Repositories
+Automate tests and publish a deployable container image via Cloud Build
+Manage resources deployed in a Kubernetes Engine cluster via Cloud Build
+
 List the active account name:
 
 ```
