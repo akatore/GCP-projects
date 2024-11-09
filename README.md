@@ -31,6 +31,8 @@ before starting, it's good to be known to these commands.
 
 ```shell
 source <(kubectl completion bash)
+alias k=kubectl
+complete -F __start_kubectl k
 
 gcloud config set compute/region "REGION"  ## Set the default compute region:
 gcloud config set compute/zone "ZONE"      ## Set the default compute zone:
